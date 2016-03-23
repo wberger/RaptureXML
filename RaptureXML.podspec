@@ -10,6 +10,9 @@ Pod::Spec.new do |s|
   s.source_files  = 'RaptureXML/*'
 
   s.libraries     = 'z', 'xml2'
-  s.xcconfig      = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+  s.xcconfig      = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2 $(PODS_ROOT)/module' }
   s.requires_arc  = true
+
+  s.preserve_path = 'module/module.modulemap'
+  s.module_map    = 'module/module.modulemap'
 end
